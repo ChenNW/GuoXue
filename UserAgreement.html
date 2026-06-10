@@ -1,73 +1,232 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>国学探索 - 用户协议</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>国学探索 - 用户协议</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC";
-    background:linear-gradient(135deg,#0b0b0b,#1a1a1a);
-    color:#d6b25e;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont,
+                         "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: radial-gradient(ellipse at 20% 20%, #1a1a0a 0%, #0a0a0a 70%);
+            color: #d6b25e;
+            line-height: 1.8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 16px;
+        }
 
-.container{
-    max-width:900px;
-    margin:50px auto;
-    padding:30px;
-    background:rgba(0,0,0,.75);
-    border:1px solid rgba(214,178,94,.4);
-    border-radius:14px;
-}
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 30% 40%, rgba(214,178,94,0.03) 0%, transparent 25%),
+                              radial-gradient(circle at 70% 60%, rgba(214,178,94,0.04) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-h1{ text-align:center; color:#f5d27a; }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 40px 35px;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(214, 178, 94, 0.35);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 40px rgba(214,178,94,0.12);
+        }
 
-h2{
-    color:#f0c96a;
-    border-left:4px solid #d6b25e;
-    padding-left:10px;
-}
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d6b25e, transparent);
+            opacity: 0.7;
+            border-radius: 1px;
+        }
 
-p{ color:#e6d3a3; line-height:1.8; }
+        h1 {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #f7e08a;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            text-shadow: 0 0 15px rgba(214,178,94,0.4);
+        }
 
-.footer{
-    text-align:center;
-    margin-top:40px;
-    font-size:13px;
-    color:#8a6f2f;
-}
-</style>
+        h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #d6b25e, #f5d27a, #d6b25e);
+            margin: 15px auto 0;
+            border-radius: 2px;
+            opacity: 0.9;
+        }
+
+        h2 {
+            margin-top: 28px;
+            font-size: 1.4rem;
+            color: #f0c96a;
+            border-left: 4px solid #d6b25e;
+            padding-left: 14px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 0.98rem;
+            color: #e6d3a3;
+            margin: 12px 0;
+            text-align: justify;
+        }
+
+        a {
+            color: #ffd36a;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, rgba(214,178,94,0.08), rgba(0,0,0,0.5));
+            border: 1px solid rgba(214,178,94,0.3);
+            border-radius: 20px;
+            padding: 28px 24px;
+            margin: 30px 0 25px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .download-section h3 {
+            font-size: 1.3rem;
+            color: #f0c96a;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .download-section p {
+            color: #d4c394;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #d6b25e, #b8943a);
+            color: #0a0a0a;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(214,178,94,0.25);
+            transition: all 0.25s ease;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,200,0.3);
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #f0d06a, #d6b25e);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(214,178,94,0.4);
+            color: #000;
+        }
+
+        .download-icon {
+            font-size: 1.4rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(214,178,94,0.2);
+            font-size: 0.85rem;
+            color: #8a6f2f;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .download-btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>用户协议</h1>
 
-<div class="container">
+        <!-- 下载引导区 -->
+        <div class="download-section">
+            <h3>📱 下载国学探索 App</h3>
+            <p>沉浸式体验八字排盘、命理解读与国学文化，<br>在传统智慧中发现自我。</p>
+            <a href="https://apps.apple.com/app/id6777875618" class="download-btn" target="_blank" rel="noopener">
+                <span class="download-icon">⬇️</span> 前往 App Store 下载
+            </a>
+            <p style="margin-top:15px; font-size:0.8rem; opacity:0.7;">支持 iPhone · iPad ｜ 完全免费</p>
+        </div>
 
-<h1>用户协议</h1>
+        <h2>一、接受条款</h2>
+        <p>使用《国学探索》即表示您同意本协议全部内容。如果您不同意本协议中的任何条款，请停止使用本应用。</p>
 
-<h2>一、接受条款</h2>
-<p>使用《国学探索》即表示您同意本协议全部内容。</p>
+        <h2>二、服务内容</h2>
+        <p>本应用提供国学相关工具与内容展示服务，包括但不限于八字排盘、命理解读、经典文化学习等功能。所有内容仅供参考娱乐，不构成任何形式的专业指导。</p>
 
-<h2>二、服务内容</h2>
-<p>本应用提供国学相关工具与内容展示服务，所有功能仅供参考使用。</p>
+        <h2>三、免责声明</h2>
+        <p>本应用提供的内容不构成任何专业建议或现实决策依据。用户应理性对待命理信息，由于依赖本应用内容而产生的任何直接或间接后果，本应用及开发方不承担任何责任。</p>
 
-<h2>三、免责声明</h2>
-<p>本应用提供的内容不构成任何专业建议或现实决策依据。</p>
+        <h2>四、数据说明</h2>
+        <p>本应用不收集、不存储、不上传任何用户信息。所有排盘与功能均在设备本地完成，您的隐私受到充分保护。</p>
 
-<h2>四、数据说明</h2>
-<p>本应用不收集、不存储、不上传任何用户信息。</p>
+        <h2>五、协议修改</h2>
+        <p>本协议可能会不定期更新，更新后将在应用内或官网公布。若您在协议变更后继续使用本应用，则视为同意修改后的协议。</p>
 
-<h2>五、协议修改</h2>
-<p>本协议可能会不定期更新，更新后将在应用内或官网公布。</p>
+        <h2>六、联系方式</h2>
+        <p>如您对本协议有任何疑问，请联系：</p>
+        <p>📧 Email：<a href="mailto:GuoXue666@163.com">GuoXue666@163.com</a></p>
 
-<h2>六、联系方式</h2>
-<p>📧 Email：GuoXue666@163.com</p>
+        <!-- 再次引导下载 -->
+        <div style="text-align:center; margin: 35px 0 15px;">
+            <a href="https://apps.apple.com/app/id6777875618" style="color:#d6b25e; text-decoration:underline; font-weight:500; font-size:0.95rem;">
+                ⬇️ 立即下载国学探索，开启命理之旅
+            </a>
+        </div>
 
-<div class="footer">© 2026 国学探索</div>
-
-</div>
-
+        <div class="footer">© 2026 国学探索</div>
+    </div>
 </body>
 </html>
