@@ -1,71 +1,231 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>国学探索 - 技术支持</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>国学探索 - 技术支持</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC";
-    background:linear-gradient(135deg,#0b0b0b,#1a1a1a);
-    color:#d6b25e;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont,
+                         "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: radial-gradient(ellipse at 20% 20%, #1a1a0a 0%, #0a0a0a 70%);
+            color: #d6b25e;
+            line-height: 1.8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 16px;
+        }
 
-.container{
-    max-width:900px;
-    margin:50px auto;
-    padding:30px;
-    background:rgba(0,0,0,.75);
-    border:1px solid rgba(214,178,94,.4);
-    border-radius:14px;
-}
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 30% 40%, rgba(214,178,94,0.03) 0%, transparent 25%),
+                              radial-gradient(circle at 70% 60%, rgba(214,178,94,0.04) 0%, transparent 30%);
+            pointer-events: none;
+            z-index: 0;
+        }
 
-h1{ text-align:center; color:#f5d27a; }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            width: 100%;
+            margin: 40px auto;
+            padding: 40px 35px;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(214, 178, 94, 0.35);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 40px rgba(214,178,94,0.12);
+        }
 
-h2{
-    color:#f0c96a;
-    border-left:4px solid #d6b25e;
-    padding-left:10px;
-}
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            right: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d6b25e, transparent);
+            opacity: 0.7;
+            border-radius: 1px;
+        }
 
-p{ color:#e6d3a3; line-height:1.8; }
+        h1 {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: #f7e08a;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            text-shadow: 0 0 15px rgba(214,178,94,0.4);
+        }
 
-a{
-    color:#ffd36a;
-    text-decoration:none;
-}
+        h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #d6b25e, #f5d27a, #d6b25e);
+            margin: 15px auto 0;
+            border-radius: 2px;
+            opacity: 0.9;
+        }
 
-a:hover{ text-decoration:underline; }
+        h2 {
+            margin-top: 28px;
+            font-size: 1.4rem;
+            color: #f0c96a;
+            border-left: 4px solid #d6b25e;
+            padding-left: 14px;
+            font-weight: 600;
+        }
 
-.footer{
-    text-align:center;
-    margin-top:40px;
-    font-size:13px;
-    color:#8a6f2f;
-}
-</style>
+        p {
+            font-size: 0.98rem;
+            color: #e6d3a3;
+            margin: 12px 0;
+            text-align: justify;
+        }
+
+        a {
+            color: #ffd36a;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .download-section {
+            background: linear-gradient(135deg, rgba(214,178,94,0.08), rgba(0,0,0,0.5));
+            border: 1px solid rgba(214,178,94,0.3);
+            border-radius: 20px;
+            padding: 28px 24px;
+            margin: 30px 0 25px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .download-section h3 {
+            font-size: 1.3rem;
+            color: #f0c96a;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .download-section p {
+            color: #d4c394;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #d6b25e, #b8943a);
+            color: #0a0a0a;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(214,178,94,0.25);
+            transition: all 0.25s ease;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255,255,200,0.3);
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #f0d06a, #d6b25e);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(214,178,94,0.4);
+            color: #000;
+        }
+
+        .download-icon {
+            font-size: 1.4rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(214,178,94,0.2);
+            font-size: 0.85rem;
+            color: #8a6f2f;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+                margin: 20px auto;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+            .download-btn {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <h1>技术支持</h1>
 
-<div class="container">
+        <!-- 下载引导区 -->
+        <div class="download-section">
+            <h3>📱 下载国学探索 App</h3>
+            <p>沉浸式体验八字排盘、命理解读与国学文化，<br>在传统智慧中发现自我。</p>
+            <a href="https://apps.apple.com/app/id6777875618" class="download-btn" target="_blank" rel="noopener">
+                <span class="download-icon">⬇️</span> 前往 App Store 下载
+            </a>
+            <p style="margin-top:15px; font-size:0.8rem; opacity:0.7;">支持 iPhone · iPad ｜ 完全免费</p>
+        </div>
 
-<h1>技术支持</h1>
+        <h2>问题反馈</h2>
+        <p>如果您在使用《国学探索》过程中遇到任何问题，或者有任何建议，欢迎随时与我们联系。我们重视每一位用户的体验，会在收到反馈后尽快响应。</p>
 
-<h2>问题反馈</h2>
-<p>如果您在使用《国学探索》过程中遇到任何问题，请联系我们。</p>
+        <h2>联系方式</h2>
+        <p>📧 Email：<a href="mailto:GuoXue666@163.com">GuoXue666@163.com</a></p>
+        <p>通常我们会在 48 小时内回复您的邮件。您也可以在 App 内部的“意见反馈”功能中直接提交问题，我们将优先处理。</p>
 
-<h2>联系方式</h2>
-<p>📧 Email：<a href="mailto:GuoXue666@163.com">GuoXue666@163.com</a></p>
+        <h2>常见问题</h2>
+        <p><strong>Q：命盘数据是否会被上传？</strong><br>
+        A：不会。所有排盘计算均在您设备本地完成，绝不存储或上传任何个人信息，请放心使用。</p>
+        <p><strong>Q：应用是否完全免费？</strong><br>
+        A：核心功能完全免费。部分增值报告为可选付费内容，购买前会明确提示。</p>
+        <p><strong>Q：遇到闪退或加载失败怎么办？</strong><br>
+        A：请尝试重启应用或更新至最新版本。如问题持续，请通过邮箱联系我们并提供设备型号与系统版本。</p>
 
-<h2>服务说明</h2>
-<p>我们将尽快处理您的反馈，并持续优化产品体验。</p>
+        <h2>服务说明</h2>
+        <p>我们将持续优化产品体验，定期推出新功能与改进。您的支持是我们前进的最大动力。</p>
 
-<div class="footer">© 2026 国学探索 Support</div>
+        <!-- 再次引导下载 -->
+        <div style="text-align:center; margin: 35px 0 15px;">
+            <a href="https://apps.apple.com/app/id6777875618" style="color:#d6b25e; text-decoration:underline; font-weight:500; font-size:0.95rem;">
+                ⬇️ 立即下载国学探索，开启命理之旅
+            </a>
+        </div>
 
-</div>
-
+        <div class="footer">© 2026 国学探索 Support</div>
+    </div>
 </body>
 </html>
