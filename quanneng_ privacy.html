@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>全能阅读器 - 隐私政策</title>
+    <link rel="icon" href="quanneng_logo.png">
+    <link rel="apple-touch-icon" href="quanneng_logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+            background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 40%, #f4f6fc 100%);
+            color: #2c3e50;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 80px 20px 60px;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            margin: auto;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(79, 140, 255, 0.3);
+            background: #fff;
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            margin-top: 24px;
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4f8cff, #6ab7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            color: #5a6a7e;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .floating {
+            position: absolute;
+            font-size: 32px;
+            opacity: 0.35;
+            animation: float 5s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .f1 {
+            left: 8%;
+            top: 50px;
+            animation-delay: 0s;
+        }
+        .f2 {
+            right: 10%;
+            top: 80px;
+            animation-delay: 0.8s;
+        }
+        .f3 {
+            left: 78%;
+            top: 200px;
+            animation-delay: 1.6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 20px 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 28px;
+            padding: 30px 28px;
+            margin-bottom: 22px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 45px rgba(79, 140, 255, 0.12);
+        }
+
+        .card h2 {
+            color: #4f8cff;
+            margin-bottom: 16px;
+            font-size: 23px;
+            font-weight: 650;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p,
+        .card ul {
+            line-height: 1.9;
+            color: #4b5563;
+            font-size: 16px;
+        }
+
+        .card ul {
+            padding-left: 22px;
+            margin-top: 6px;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+        }
+
+        .contact-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-contact {
+            display: inline-block;
+            margin: 25px 0 10px;
+            padding: 16px 38px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 650;
+            font-size: 17px;
+            background: linear-gradient(135deg, #4f8cff, #6ab7ff);
+            box-shadow: 0 12px 28px rgba(79, 140, 255, 0.35);
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
+            -webkit-appearance: none;
+        }
+
+        .btn-contact:active {
+            transform: scale(0.94);
+            box-shadow: 0 8px 20px rgba(79, 140, 255, 0.4);
+        }
+
+        .email-link {
+            color: #4f8cff;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px dashed rgba(79, 140, 255, 0.5);
+            padding-bottom: 2px;
+            transition: border-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .email-link:active {
+            border-bottom-color: #4f8cff;
+            opacity: 0.7;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px 40px;
+            color: #8a94a6;
+            font-size: 14px;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            margin-top: 20px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%) translateY(30px);
+            background: rgba(30, 35, 45, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            white-space: nowrap;
+            max-width: 85vw;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .toast-icon {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="floating f1">🔒</div>
+        <div class="floating f2">📚</div>
+        <div class="floating f3">✨</div>
+
+        <div class="logo">
+            <img src="quanneng_logo.png" alt="全能阅读器">
+        </div>
+
+        <h1>全能阅读器</h1>
+        <p>隐私政策 · Privacy Policy</p>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>🔒 隐私说明</h2>
+            <p>
+                我们非常重视您的隐私。本政策说明了全能阅读器如何收集、使用和保护您的信息。使用本应用即表示您同意本隐私政策。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📋 信息收集</h2>
+            <p>
+                我们可能收集以下必要信息：<br>
+                • 设备基本信息（型号、系统版本）<br>
+                • 应用运行日志与崩溃信息<br>
+                • 用户主动反馈的内容<br>
+                • Apple 提供的购买验证信息（如适用）
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📁 本地文件</h2>
+            <p>
+                您导入的 TXT、EPUB、PDF 等文件仅保存在设备本地。我们不会主动上传、读取、分享或出售您的文件内容。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🎯 信息使用</h2>
+            <p>
+                收集的信息仅用于：<br>
+                • 提供阅读与文件管理功能<br>
+                • 提升应用稳定性与性能<br>
+                • 修复异常与崩溃<br>
+                • 响应用户支持请求
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>☁️ 数据存储</h2>
+            <p>
+                文件默认存储于本地，若您主动使用 iCloud 同步或系统备份，数据将遵循 Apple 的服务条款进行存储与同步。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🤝 第三方服务</h2>
+            <p>
+                本应用可能集成以下服务：<br>
+                • Apple App Store（分发）<br>
+                • Apple 内购（如适用）<br>
+                • Apple iCloud（用户主动开启）<br>
+                • Apple 崩溃分析
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🔐 权限说明</h2>
+            <p>
+                根据功能需要申请：<br>
+                • 文件访问：导入与管理文档<br>
+                • 网络权限：获取更新与支持<br>
+                • iCloud 权限：同步数据（如开启）<br>
+                我们不会访问通讯录、短信等敏感信息。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>👶 未成年人保护</h2>
+            <p>
+                未成年人应在监护人指导下使用。若发现未经监护人同意提供个人信息，请及时联系我们。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📝 政策更新</h2>
+            <p>
+                我们可能适时更新本政策，更新后将在应用内或官网公布。
+            </p>
+        </div>
+
+        <div class="card contact-card">
+            <h2>📧 联系我们</h2>
+            <p>如对隐私政策有疑问，欢迎联系：</p>
+            <button class="btn-contact" onclick="handleMailClick(event, 'guoxuetansuo@163.com')" type="button">
+                ✉️ 联系技术支持
+            </button>
+            <p style="margin-top: 20px; color:#5a6a7e;">
+                邮箱：<a class="email-link" href="mailto:guoxuetansuo@163.com" onclick="handleMailClick(event, 'guoxuetansuo@163.com')">guoxuetansuo@163.com</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 全能阅读器 · All Rights Reserved<br>最后更新：2026年6月
+    </div>
+
+    <div class="toast" id="toast">
+        <span class="toast-icon">📋</span><span id="toastMsg">已复制</span>
+    </div>
+
+    <script>
+        (function() {
+            const toastEl = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            let timer = null;
+
+            function showToast(text, icon = '📋') {
+                toastEl.querySelector('.toast-icon').textContent = icon;
+                toastMsg.textContent = text;
+                if (timer) clearTimeout(timer);
+                toastEl.classList.remove('show');
+                void toastEl.offsetWidth;
+                toastEl.classList.add('show');
+                timer = setTimeout(() => toastEl.classList.remove('show'), 2500);
+            }
+
+            function copyText(text, onSuccess, onFail) {
+                if (navigator.clipboard?.writeText) {
+                    navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopy(text, onSuccess, onFail));
+                } else {
+                    fallbackCopy(text, onSuccess, onFail);
+                }
+            }
+
+            function fallbackCopy(text, onSuccess, onFail) {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.left = '-9999px';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                ta.setSelectionRange(0, text.length);
+                try {
+                    document.execCommand('copy') ? onSuccess() : onFail();
+                } catch (e) {
+                    onFail();
+                }
+                document.body.removeChild(ta);
+            }
+
+            window.handleMailClick = function(event, email) {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                const mailto = 'mailto:' + email;
+                const wasHidden = document.hidden;
+                try { window.location.href = mailto; } catch (e) {}
+                setTimeout(() => {
+                    if (!document.hidden || wasHidden) {
+                        const a = document.createElement('a');
+                        a.href = mailto;
+                        a.target = '_self';
+                        a.style.display = 'none';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    }
+                }, 150);
+                setTimeout(() => {
+                    if (!document.hidden || wasHidden) {
+                        copyText(email,
+                            () => showToast('邮箱已复制：' + email, '✅'),
+                            () => showToast('请手动复制邮箱：' + email, '📧')
+                        );
+                    }
+                }, 700);
+            };
+        })();
+    </script>
+</body>
+</html>
