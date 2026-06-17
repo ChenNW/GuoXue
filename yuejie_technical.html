@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>阅界 - 技术支持</title>
+    <link rel="icon" href="yuejielogo.png">
+    <link rel="apple-touch-icon" href="yuejielogo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+            background: linear-gradient(180deg,
+                    #f7faff 0%,
+                    #ffffff 40%,
+                    #f8fafc 100%);
+            color: #333;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 80px 20px 60px;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 140px;
+            height: 140px;
+            margin: auto;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 80, 255, .25);
+            background: #fff;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            margin-top: 24px;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .floating {
+            position: absolute;
+            font-size: 28px;
+            opacity: .5;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .f1 {
+            left: 10%;
+            top: 60px;
+        }
+
+        .f2 {
+            right: 12%;
+            top: 90px;
+        }
+
+        .f3 {
+            left: 75%;
+            top: 180px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 20px 50px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, .85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, .05);
+        }
+
+        .card h2 {
+            color: #4f8cff;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .card p {
+            line-height: 1.9;
+            color: #555;
+        }
+
+        .card ul {
+            margin-top: 8px;
+            padding-left: 20px;
+            color: #555;
+            line-height: 1.9;
+        }
+
+        .card ul li {
+            margin-bottom: 6px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 32px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            background: linear-gradient(135deg,
+                    #4f8cff,
+                    #6ab7ff);
+            box-shadow: 0 10px 20px rgba(79, 140, 255, .25);
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            font-family: inherit;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            -webkit-appearance: none;
+        }
+
+        .contact-btn:active {
+            transform: scale(0.96);
+            box-shadow: 0 6px 14px rgba(79, 140, 255, .3);
+        }
+
+        .email-link {
+            color: #4f8cff;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed rgba(79, 140, 255, 0.45);
+            padding-bottom: 1px;
+            transition: border-color 0.2s ease;
+        }
+
+        .email-link:active {
+            border-bottom-color: #4f8cff;
+            opacity: 0.7;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px 50px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        /* Toast 提示样式 */
+        .toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(40, 44, 52, 0.92);
+            color: #fff;
+            padding: 13px 24px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+            max-width: 90vw;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .toast .toast-icon {
+            margin-right: 6px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+
+        <div class="floating f1">🔧</div>
+        <div class="floating f2">💡</div>
+        <div class="floating f3">📖</div>
+
+        <div class="logo">
+            <img src="yuejielogo.png" alt="阅界">
+        </div>
+
+        <h1>阅界</h1>
+
+        <p>技术支持（Help & Support）</p>
+
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>🛠️ 技术支持说明</h2>
+            <p>
+                感谢使用阅界！本页面汇集了常见问题与使用帮助。
+                如果您在使用过程中遇到任何疑问，请先查看下方的常见问题解答。
+                若仍未能解决您的问题，欢迎通过页面底部的联系方式与我们取得联系。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📥 如何导入电子书？</h2>
+            <p>
+                您可以通过以下方式将文件导入阅界：<br><br>
+                • <strong>文件 App 导入：</strong>在文件 App 中找到您的电子书，选择“共享”或“打开方式”，然后选择阅界。<br>
+                • <strong>电脑传输：</strong>使用 iTunes 文件共享或访达（macOS Catalina 及以上）将文件拖拽至阅界的文稿目录。<br>
+                • <strong>其他应用分享：</strong>在其他应用中点击分享按钮，选择阅界即可导入。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📚 支持哪些文件格式？</h2>
+            <p>
+                阅界支持多种常见的电子书与文档格式，具体包括：<br><br>
+                • <strong>TXT</strong> – 纯文本文件<br>
+                • <strong>EPUB</strong> – 标准电子书格式（支持插图与目录）<br>
+                • <strong>PDF</strong> – 便携式文档格式<br>
+                • <strong>CHM</strong> – 微软帮助文档格式<br>
+                • <strong>ZIP</strong> – 压缩包（可直接浏览其中支持的文档）
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🔍 阅读时的基本操作</h2>
+            <p>
+                • <strong>翻页：</strong>左右滑动屏幕或点击屏幕两侧区域。<br>
+                • <strong>目录/书签：</strong>点击屏幕中央呼出菜单，可快速跳转章节或添加书签。<br>
+                • <strong>字体与主题：</strong>在阅读菜单中可调整字体大小、背景颜色与夜间模式。<br>
+                • <strong>搜索：</strong>支持全文搜索，快速定位关键词。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>☁️ 数据备份与同步</h2>
+            <p>
+                阅界本身不提供云存储服务。您的电子书和阅读进度默认保存在设备本地。<br>
+                若您希望备份数据，建议使用以下方法：<br><br>
+                • <strong>iCloud 备份：</strong>确保设备开启了 iCloud 云备份，阅界的数据将随系统备份一同保存。<br>
+                • <strong>手动导出：</strong>通过 iTunes 文件共享或文件 App 将文件拷贝至电脑或其他位置。<br>
+                • <strong>阅读进度：</strong>阅界将阅读位置、书签等数据存储于本地，删除应用将丢失这些数据，请提前做好备份。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>⚙️ 常见问题排查</h2>
+            <p>
+                <strong>Q：文件导入后无法打开或乱码？</strong><br>
+                A：请确认文件格式是否受支持，并尝试使用其他应用打开以验证文件是否损坏。TXT 文件请确保编码为 UTF-8。<br><br>
+                <strong>Q：阅读进度丢失？</strong><br>
+                A：如果卸载应用或清除数据，进度会丢失。请定期备份。若未进行任何重置操作但进度消失，可尝试重新打开同一本书，系统会尝试恢复上次位置。<br><br>
+                <strong>Q：应用闪退或卡顿？</strong><br>
+                A：请尝试关闭后台其他应用，重启阅界。如果问题依旧，可尝试重新安装（注意先备份文件）。<br><br>
+                <strong>Q：如何联系开发者？</strong><br>
+                A：请通过下方的“联系技术支持”按钮或邮箱与我们联系，我们会在 24 小时内回复。
+            </p>
+        </div>
+
+        <div class="card contact">
+
+            <h2>📧 联系技术支持</h2>
+
+            <p>
+                如果您的问题不在上述列表内，或有其他意见与建议，
+                请随时通过以下方式联系我们。
+            </p>
+
+            <!-- 联系按钮：使用 onclick 处理，兼容 WKWebView -->
+            <button class="contact-btn"
+            onclick="handleMailClick(event, 'yuejieapp@163.com')"
+            type="button">
+            联系技术支持
+        </button>
+
+        <p style="margin-top:20px;color:#777;">
+            邮箱：<a class="email-link"
+            href="mailto:guoxuetansuo@163.com"
+            onclick="handleMailClick(event, 'guoxuetansuo@163.com')">guoxuetansuo@163.com</a>
+        </p>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    © 2026 阅界 · All Rights Reserved<br>
+    最后更新时间：2026年6月
+</div>
+
+<!-- Toast 提示 -->
+<div class="toast" id="toast">
+    <span class="toast-icon">📋</span><span id="toastMsg">已复制</span>
+</div>
+
+<script>
+    (function() {
+
+        var toastTimer = null;
+        var toastEl = document.getElementById('toast');
+        var toastMsgEl = document.getElementById('toastMsg');
+
+        function showToast(message, icon) {
+            icon = icon || '📋';
+            var iconSpan = toastEl.querySelector('.toast-icon');
+            if (iconSpan) {
+                iconSpan.textContent = icon;
+            }
+            toastMsgEl.textContent = message;
+
+            if (toastTimer) {
+                clearTimeout(toastTimer);
+                toastEl.classList.remove('show');
+                void toastEl.offsetWidth;
+            }
+
+            toastEl.classList.add('show');
+
+            toastTimer = setTimeout(function() {
+                toastEl.classList.remove('show');
+                toastTimer = null;
+            }, 2500);
+        }
+
+        function copyToClipboard(text, onSuccess, onError) {
+            if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+                navigator.clipboard.writeText(text).then(function() {
+                    if (onSuccess) onSuccess();
+                }).catch(function() {
+                    fallbackCopy(text, onSuccess, onError);
+                });
+            } else {
+                fallbackCopy(text, onSuccess, onError);
+            }
+        }
+
+        function fallbackCopy(text, onSuccess, onError) {
+            var textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            textarea.style.top = '-9999px';
+            textarea.style.opacity = '0';
+            textarea.style.pointerEvents = 'none';
+            textarea.setAttribute('readonly', '');
+            document.body.appendChild(textarea);
+
+            textarea.select();
+            textarea.setSelectionRange(0, text.length);
+
+            try {
+                var success = document.execCommand('copy');
+                if (success && onSuccess) {
+                    onSuccess();
+                } else if (!success && onError) {
+                    onError();
+                }
+            } catch (e) {
+                if (onError) onError();
+            }
+
+            document.body.removeChild(textarea);
+        }
+
+        function handleMailClick(event, email) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            var mailtoUrl = 'mailto:' + email;
+            var wasHiddenBefore = document.hidden || false;
+
+            try {
+                window.location.href = mailtoUrl;
+            } catch (e) {}
+
+            setTimeout(function() {
+                if (document.hidden && !wasHiddenBefore) {
+                    return;
+                }
+
+                try {
+                    var link = document.createElement('a');
+                    link.href = mailtoUrl;
+                    link.target = '_self';
+                    link.style.display = 'none';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } catch (e) {}
+            }, 150);
+
+            setTimeout(function() {
+                if (document.hidden && !wasHiddenBefore) {
+                    return;
+                }
+                if (document.hidden) {
+                    return;
+                }
+
+                copyToClipboard(email,
+                    function() {
+                        showToast('邮箱已复制：' + email, '✅');
+                    },
+                    function() {
+                        showToast('请手动复制邮箱：' + email, '📧');
+                    }
+                );
+            }, 700);
+        }
+
+        window.handleMailClick = handleMailClick;
+
+    })();
+</script>
+
+</body>
+</html>
