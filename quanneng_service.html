@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>全能阅读器 - 服务条款</title>
+    <link rel="icon" href="quanneng_logo.png">
+    <link rel="apple-touch-icon" href="quanneng_logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+            background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 40%, #f4f6fc 100%);
+            color: #2c3e50;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 80px 20px 60px;
+            overflow: hidden;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            margin: auto;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(79, 140, 255, 0.3);
+            background: #fff;
+            transition: transform 0.3s ease;
+            animation: logoPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .hero h1 {
+            margin-top: 24px;
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #4f8cff, #6ab7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            color: #5a6a7e;
+            font-size: 17px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .floating {
+            position: absolute;
+            font-size: 32px;
+            opacity: 0.35;
+            animation: float 5s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .f1 {
+            left: 8%;
+            top: 50px;
+            animation-delay: 0s;
+        }
+        .f2 {
+            right: 10%;
+            top: 80px;
+            animation-delay: 0.8s;
+        }
+        .f3 {
+            left: 78%;
+            top: 200px;
+            animation-delay: 1.6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 20px 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 28px;
+            padding: 30px 28px;
+            margin-bottom: 22px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 45px rgba(79, 140, 255, 0.12);
+        }
+
+        .card h2 {
+            color: #4f8cff;
+            margin-bottom: 16px;
+            font-size: 23px;
+            font-weight: 650;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card p,
+        .card ul {
+            line-height: 1.9;
+            color: #4b5563;
+            font-size: 16px;
+        }
+
+        .card ul {
+            padding-left: 22px;
+            margin-top: 6px;
+        }
+
+        .card ul li {
+            margin-bottom: 8px;
+        }
+
+        .contact-card {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+
+        .btn-contact {
+            display: inline-block;
+            margin: 25px 0 10px;
+            padding: 16px 38px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 650;
+            font-size: 17px;
+            background: linear-gradient(135deg, #4f8cff, #6ab7ff);
+            box-shadow: 0 12px 28px rgba(79, 140, 255, 0.35);
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: 0.3px;
+            -webkit-appearance: none;
+        }
+
+        .btn-contact:active {
+            transform: scale(0.94);
+            box-shadow: 0 8px 20px rgba(79, 140, 255, 0.4);
+        }
+
+        .email-link {
+            color: #4f8cff;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px dashed rgba(79, 140, 255, 0.5);
+            padding-bottom: 2px;
+            transition: border-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .email-link:active {
+            border-bottom-color: #4f8cff;
+            opacity: 0.7;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px 40px;
+            color: #8a94a6;
+            font-size: 14px;
+            border-top: 1px solid rgba(0, 0, 0, 0.04);
+            margin-top: 20px;
+        }
+
+        /* Toast 动画 */
+        .toast {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%) translateY(30px);
+            background: rgba(30, 35, 45, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            white-space: nowrap;
+            max-width: 85vw;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .toast-icon {
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="floating f1">📖</div>
+        <div class="floating f2">⚖️</div>
+        <div class="floating f3">✨</div>
+
+        <div class="logo">
+            <img src="quanneng_logo.png" alt="全能阅读器">
+        </div>
+
+        <h1>全能阅读器</h1>
+        <p>服务条款 · Terms of Service</p>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>📄 条款说明</h2>
+            <p>
+                欢迎使用全能阅读器（以下简称“本应用”）。请仔细阅读本服务条款。您下载、安装或使用本应用即表示您已理解并同意遵守全部条款。若您不同意，请勿使用本应用。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📚 服务内容</h2>
+            <p>
+                全能阅读器是一款本地文档阅读与管理工具，支持 TXT、EPUB、PDF、CHM、ZIP 等格式的导入与阅读，提供文件浏览、解压、书签、进度保存等功能。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>👤 用户责任</h2>
+            <p>
+                您应保证导入的文件内容合法，不得利用本应用传播侵权、违法、色情或暴力内容。因用户行为引发的法律纠纷，由用户自行承担。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>©️ 知识产权</h2>
+            <p>
+                本应用的界面、图标、代码等知识产权归开发者所有。用户导入的文件版权归属原权利人，本应用不对其主张任何权利。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🔒 数据与隐私</h2>
+            <p>
+                文件默认保存在设备本地，本应用不会主动上传或分享。个人信息处理详见《隐私政策》。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>⚠️ 免责声明</h2>
+            <p>
+                本应用按“现状”提供，不对因设备故障、文件损坏、第三方干扰等造成的损失承担责任。建议用户定期备份重要数据。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🔄 服务变更</h2>
+            <p>
+                我们保留修改、更新或终止服务的权利。重大变更将通过应用内或官方网站通知。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>🚫 禁止行为</h2>
+            <p>
+                • 侵犯第三方知识产权<br>
+                • 传播违法违规内容<br>
+                • 破解、反编译或攻击本应用<br>
+                • 利用本应用从事非法活动
+            </p>
+        </div>
+
+        <div class="card contact-card">
+            <h2>📧 联系我们</h2>
+            <p>如对本条款有疑问，请通过以下方式联系：</p>
+            <button class="btn-contact" onclick="handleMailClick(event, 'guoxuetansuo@163.com')" type="button">
+                ✉️ 联系技术支持
+            </button>
+            <p style="margin-top: 20px; color:#5a6a7e;">
+                邮箱：<a class="email-link" href="mailto:guoxuetansuo@163.com" onclick="handleMailClick(event, 'guoxuetansuo@163.com')">guoxuetansuo@163.com</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 全能阅读器 · All Rights Reserved<br>最后更新：2026年6月
+    </div>
+
+    <div class="toast" id="toast">
+        <span class="toast-icon">📋</span><span id="toastMsg">已复制</span>
+    </div>
+
+    <script>
+        (function() {
+            const toastEl = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            let timer = null;
+
+            function showToast(text, icon = '📋') {
+                toastEl.querySelector('.toast-icon').textContent = icon;
+                toastMsg.textContent = text;
+                if (timer) clearTimeout(timer);
+                toastEl.classList.remove('show');
+                void toastEl.offsetWidth;
+                toastEl.classList.add('show');
+                timer = setTimeout(() => toastEl.classList.remove('show'), 2500);
+            }
+
+            function copyText(text, onSuccess, onFail) {
+                if (navigator.clipboard?.writeText) {
+                    navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopy(text, onSuccess, onFail));
+                } else {
+                    fallbackCopy(text, onSuccess, onFail);
+                }
+            }
+
+            function fallbackCopy(text, onSuccess, onFail) {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.left = '-9999px';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                ta.setSelectionRange(0, text.length);
+                try {
+                    document.execCommand('copy') ? onSuccess() : onFail();
+                } catch (e) {
+                    onFail();
+                }
+                document.body.removeChild(ta);
+            }
+
+            window.handleMailClick = function(event, email) {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                const mailto = 'mailto:' + email;
+                const wasHidden = document.hidden;
+                try { window.location.href = mailto; } catch (e) {}
+                setTimeout(() => {
+                    if (!document.hidden || wasHidden) {
+                        const a = document.createElement('a');
+                        a.href = mailto;
+                        a.target = '_self';
+                        a.style.display = 'none';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    }
+                }, 150);
+                setTimeout(() => {
+                    if (!document.hidden || wasHidden) {
+                        copyText(email,
+                            () => showToast('邮箱已复制：' + email, '✅'),
+                            () => showToast('请手动复制邮箱：' + email, '📧')
+                        );
+                    }
+                }, 700);
+            };
+        })();
+    </script>
+</body>
+</html>
