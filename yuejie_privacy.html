@@ -1,274 +1,351 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>阅界 - 隐私政策</title>
-<link rel="icon" href="yuejielogo.png">
-<link rel="apple-touch-icon" href="yuejielogo.png">
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>阅界 - 隐私政策</title>
+    <link rel="icon" href="yuejielogo.png">
+    <link rel="apple-touch-icon" href="yuejielogo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+            background: linear-gradient(180deg,
+                    #f7faff 0%,
+                    #ffffff 40%,
+                    #f8fafc 100%);
+            color: #333;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+        }
 
-body{
-    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;
-    background:linear-gradient(
-        180deg,
-        #f7faff 0%,
-        #ffffff 40%,
-        #f8fafc 100%
-    );
-    color:#333;
-}
+        .hero {
+            position: relative;
+            text-align: center;
+            padding: 80px 20px 60px;
+            overflow: hidden;
+        }
 
-.hero{
-    position:relative;
-    text-align:center;
-    padding:80px 20px 60px;
-    overflow:hidden;
-}
+        .logo {
+            width: 140px;
+            height: 140px;
+            margin: auto;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 80, 255, .25);
+            background: #fff;
+        }
 
-.logo{
-    width:140px;
-    height:140px;
+        .logo img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
 
-    margin:auto;
+        .hero h1 {
+            margin-top: 24px;
+            font-size: 40px;
+            font-weight: 700;
+        }
 
-    border-radius:32px;
-    overflow:hidden;
+        .hero p {
+            margin-top: 10px;
+            color: #666;
+            font-size: 16px;
+        }
 
-    box-shadow:
-        0 20px 50px rgba(0,80,255,.25);
+        .floating {
+            position: absolute;
+            font-size: 28px;
+            opacity: .5;
+            animation: float 4s ease-in-out infinite;
+            pointer-events: none;
+            user-select: none;
+        }
 
-    background:#fff;
-}
+        .f1 {
+            left: 10%;
+            top: 60px;
+        }
 
-.logo img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
-}
+        .f2 {
+            right: 12%;
+            top: 90px;
+        }
 
-.hero h1{
-    margin-top:24px;
-    font-size:40px;
-    font-weight:700;
-}
+        .f3 {
+            left: 75%;
+            top: 180px;
+        }
 
-.hero p{
-    margin-top:10px;
-    color:#666;
-    font-size:16px;
-}
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
 
-.floating{
-    position:absolute;
-    font-size:28px;
-    opacity:.5;
-    animation:float 4s ease-in-out infinite;
-}
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 20px 50px;
+        }
 
-.f1{ left:10%; top:60px; }
-.f2{ right:12%; top:90px; }
-.f3{ left:75%; top:180px; }
+        .card {
+            background: rgba(255, 255, 255, .88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, .05);
+        }
 
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-10px);}
-    100%{transform:translateY(0);}
-}
+        .card h2 {
+            color: #4f8cff;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:0 20px 50px;
-}
+        .card p {
+            line-height: 1.9;
+            color: #555;
+        }
 
-.card{
-    background:rgba(255,255,255,.88);
-    backdrop-filter:blur(20px);
-    border-radius:24px;
-    padding:28px;
-    margin-bottom:20px;
-    box-shadow:0 8px 30px rgba(0,0,0,.05);
-}
+        .contact {
+            text-align: center;
+        }
 
-.card h2{
-    color:#4f8cff;
-    margin-bottom:15px;
-    font-size:22px;
-}
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 32px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            background: linear-gradient(135deg,
+                    #4f8cff,
+                    #6ab7ff);
+            box-shadow: 0 10px 20px rgba(79, 140, 255, .25);
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+            font-family: inherit;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            -webkit-appearance: none;
+        }
 
-.card p{
-    line-height:1.9;
-    color:#555;
-}
+        .contact-btn:active {
+            transform: scale(0.96);
+            box-shadow: 0 6px 14px rgba(79, 140, 255, .3);
+        }
 
-.contact{
-    text-align:center;
-}
+        /* 底部邮箱链接样式 */
+        .email-link {
+            color: #4f8cff;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed rgba(79, 140, 255, 0.45);
+            padding-bottom: 1px;
+            transition: border-color 0.2s ease;
+        }
 
-.contact-btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:14px 32px;
-    border-radius:999px;
-    text-decoration:none;
-    color:#fff;
-    font-weight:600;
-    background:linear-gradient(
-        135deg,
-        #4f8cff,
-        #6ab7ff
-    );
-    box-shadow:0 10px 20px rgba(79,140,255,.25);
-}
+        .email-link:active {
+            border-bottom-color: #4f8cff;
+            opacity: 0.7;
+        }
 
-.footer{
-    text-align:center;
-    padding:30px 20px 50px;
-    color:#999;
-    font-size:14px;
-}
+        .footer {
+            text-align: center;
+            padding: 30px 20px 50px;
+            color: #999;
+            font-size: 14px;
+        }
 
-</style>
+        /* ===== Toast 提示样式 ===== */
+        .toast {
+            position: fixed;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(40, 44, 52, 0.92);
+            color: #fff;
+            padding: 13px 24px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.22);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+            max-width: 90vw;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .toast .toast-icon {
+            margin-right: 6px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="hero">
+    <div class="hero">
 
-    <div class="floating f1">📚</div>
-    <div class="floating f2">🔒</div>
-    <div class="floating f3">✨</div>
+        <div class="floating f1">📚</div>
+        <div class="floating f2">🔒</div>
+        <div class="floating f3">✨</div>
 
-    <div class="logo">
-        <img src="yuejielogo.png" alt="阅界">
+        <div class="logo">
+            <img src="yuejielogo.png" alt="阅界">
+        </div>
+
+        <h1>阅界</h1>
+
+        <p>隐私政策（Privacy Policy）</p>
+
     </div>
 
-    <h1>阅界</h1>
+    <div class="container">
 
-    <p>隐私政策（Privacy Policy）</p>
+        <div class="card">
+            <h2>🔒 隐私政策说明</h2>
+            <p>
+                欢迎使用阅界。我们非常重视您的个人信息与隐私保护。
+                本隐私政策旨在说明我们如何收集、使用、存储和保护您的信息。
+                使用本应用即表示您已阅读并同意本隐私政策。
+            </p>
+        </div>
 
-</div>
+        <div class="card">
+            <h2>📋 信息收集</h2>
+            <p>
+                阅界是一款本地阅读工具。
+                在正常使用过程中，我们可能收集以下必要信息：<br><br>
 
-<div class="container">
+                • 设备基础信息（设备型号、系统版本）；<br>
+                • 应用运行日志和崩溃信息；<br>
+                • 用户主动反馈的信息；<br>
+                • Apple 提供的购买验证信息（如适用）。
+            </p>
+        </div>
 
-    <div class="card">
-        <h2>🔒 隐私政策说明</h2>
-        <p>
-            欢迎使用阅界。我们非常重视您的个人信息与隐私保护。
-            本隐私政策旨在说明我们如何收集、使用、存储和保护您的信息。
-            使用本应用即表示您已阅读并同意本隐私政策。
-        </p>
-    </div>
+        <div class="card">
+            <h2>📚 本地文件说明</h2>
+            <p>
+                用户导入的 TXT、PDF、EPUB、CHM、ZIP 等文件，
+                默认仅保存在用户设备本地。
+                阅界不会主动上传、读取、分享或出售用户导入文件的内容。
+            </p>
+        </div>
 
-    <div class="card">
-        <h2>📋 信息收集</h2>
-        <p>
-            阅界是一款本地阅读工具。
-            在正常使用过程中，我们可能收集以下必要信息：<br><br>
+        <div class="card">
+            <h2>🎯 信息使用</h2>
+            <p>
+                收集的信息仅用于：<br><br>
 
-            • 设备基础信息（设备型号、系统版本）；<br>
-            • 应用运行日志和崩溃信息；<br>
-            • 用户主动反馈的信息；<br>
-            • Apple 提供的购买验证信息（如适用）。
-        </p>
-    </div>
+                • 提供阅读和文件管理功能；<br>
+                • 改善应用稳定性和性能；<br>
+                • 修复异常和崩溃问题；<br>
+                • 响应用户咨询与技术支持。
+            </p>
+        </div>
 
-    <div class="card">
-        <h2>📚 本地文件说明</h2>
-        <p>
-            用户导入的 TXT、PDF、EPUB、CHM、ZIP 等文件，
-            默认仅保存在用户设备本地。
-            阅界不会主动上传、读取、分享或出售用户导入文件的内容。
-        </p>
-    </div>
+        <div class="card">
+            <h2>☁️ 数据存储</h2>
+            <p>
+                阅界不会主动将您的阅读文件上传至服务器。
+                如您主动使用 iCloud 同步或系统备份功能，
+                相关数据将按照 Apple 的服务条款进行存储和同步。
+            </p>
+        </div>
 
-    <div class="card">
-        <h2>🎯 信息使用</h2>
-        <p>
-            收集的信息仅用于：<br><br>
+        <div class="card">
+            <h2>🤝 第三方服务</h2>
+            <p>
+                本应用可能使用以下服务：<br><br>
 
-            • 提供阅读和文件管理功能；<br>
-            • 改善应用稳定性和性能；<br>
-            • 修复异常和崩溃问题；<br>
-            • 响应用户咨询与技术支持。
-        </p>
-    </div>
+                • Apple App Store（应用分发）；<br>
+                • Apple In-App Purchase（应用内购买，如适用）；<br>
+                • Apple iCloud（云同步服务，如用户主动开启）；<br>
+                • Apple Crash Logs（崩溃分析）。
+            </p>
+        </div>
 
-    <div class="card">
-        <h2>☁️ 数据存储</h2>
-        <p>
-            阅界不会主动将您的阅读文件上传至服务器。
-            如您主动使用 iCloud 同步或系统备份功能，
-            相关数据将按照 Apple 的服务条款进行存储和同步。
-        </p>
-    </div>
+        <div class="card">
+            <h2>🔐 权限说明</h2>
+            <p>
+                根据功能需要，本应用可能申请以下权限：<br><br>
 
-    <div class="card">
-        <h2>🤝 第三方服务</h2>
-        <p>
-            本应用可能使用以下服务：<br><br>
+                • 文件访问权限：用于导入和管理用户文件；<br>
+                • 网络权限：用于获取更新信息及技术支持服务；<br>
+                • iCloud 权限：用于同步用户数据（如开启）。<br><br>
 
-            • Apple App Store（应用分发）；<br>
-            • Apple In-App Purchase（应用内购买，如适用）；<br>
-            • Apple iCloud（云同步服务，如用户主动开启）；<br>
-            • Apple Crash Logs（崩溃分析）。
-        </p>
-    </div>
+                我们不会访问您的通讯录、短信、通话记录等个人敏感信息。
+            </p>
+        </div>
 
-    <div class="card">
-        <h2>🔐 权限说明</h2>
-        <p>
-            根据功能需要，本应用可能申请以下权限：<br><br>
+        <div class="card">
+            <h2>👶 未成年人保护</h2>
+            <p>
+                未成年人应在监护人的指导下使用本应用。
+                如发现未成年人未经监护人同意提供个人信息，
+                请及时与我们联系。
+            </p>
+        </div>
 
-            • 文件访问权限：用于导入和管理用户文件；<br>
-            • 网络权限：用于获取更新信息及技术支持服务；<br>
-            • iCloud 权限：用于同步用户数据（如开启）。<br><br>
+        <div class="card">
+            <h2>📝 政策更新</h2>
+            <p>
+                我们可能根据业务发展和法律法规要求更新本隐私政策。
+                更新后的政策将在应用内或官方网站公布。
+            </p>
+        </div>
 
-            我们不会访问您的通讯录、短信、通话记录等个人敏感信息。
-        </p>
-    </div>
+        <div class="card contact">
 
-    <div class="card">
-        <h2>👶 未成年人保护</h2>
-        <p>
-            未成年人应在监护人的指导下使用本应用。
-            如发现未成年人未经监护人同意提供个人信息，
-            请及时与我们联系。
-        </p>
-    </div>
+            <h2>📧 联系我们</h2>
 
-    <div class="card">
-        <h2>📝 政策更新</h2>
-        <p>
-            我们可能根据业务发展和法律法规要求更新本隐私政策。
-            更新后的政策将在应用内或官方网站公布。
-        </p>
-    </div>
+            <p>
+                如您对本隐私政策有任何疑问、
+                意见或建议，请通过以下方式联系我们。
+            </p>
 
-    <div class="card contact">
-
-        <h2>📧 联系我们</h2>
-
-        <p>
-            如您对本隐私政策有任何疑问、
-            意见或建议，请通过以下方式联系我们。
-        </p>
-
-        <a class="contact-btn"
-           href="mailto:yuejieapp@163.com">
+            <!-- 联系按钮：使用 onclick 处理，兼容 WKWebView -->
+            <button class="contact-btn"
+            onclick="handleMailClick(event, 'yuejieapp@163.com')"
+            type="button">
             联系技术支持
-        </a>
+        </button>
 
         <p style="margin-top:20px;color:#777;">
-            邮箱：guoxuetansuo@163.com
+            邮箱：<a class="email-link"
+            href="mailto:guoxuetansuo@163.com"
+            onclick="handleMailClick(event, 'guoxuetansuo@163.com')">guoxuetansuo@163.com</a>
         </p>
 
     </div>
@@ -279,6 +356,183 @@ body{
     © 2026 阅界 · All Rights Reserved<br>
     最后更新时间：2026年6月
 </div>
+
+<!-- Toast 提示 -->
+<div class="toast" id="toast">
+    <span class="toast-icon">📋</span><span id="toastMsg">已复制</span>
+</div>
+
+<script>
+    (function() {
+
+        var toastTimer = null;
+        var toastEl = document.getElementById('toast');
+        var toastMsgEl = document.getElementById('toastMsg');
+
+        /**
+         * 显示 Toast 提示
+         * @param {string} message - 提示文字
+         * @param {string} icon - 图标 emoji（可选）
+         */
+        function showToast(message, icon) {
+            icon = icon || '📋';
+            var iconSpan = toastEl.querySelector('.toast-icon');
+            if (iconSpan) {
+                iconSpan.textContent = icon;
+            }
+            toastMsgEl.textContent = message;
+
+            // 清除之前的定时器
+            if (toastTimer) {
+                clearTimeout(toastTimer);
+                toastEl.classList.remove('show');
+                // 强制回流后重新添加
+                void toastEl.offsetWidth;
+            }
+
+            toastEl.classList.add('show');
+
+            toastTimer = setTimeout(function() {
+                toastEl.classList.remove('show');
+                toastTimer = null;
+            }, 2500);
+        }
+
+        /**
+         * 复制文本到剪贴板（兼容多种环境）
+         * @param {string} text - 要复制的文本
+         * @param {function} onSuccess - 成功回调
+         * @param {function} onError - 失败回调
+         */
+        function copyToClipboard(text, onSuccess, onError) {
+            // 方法 1：现代 Clipboard API（需要 HTTPS 或 localhost）
+            if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+                navigator.clipboard.writeText(text).then(function() {
+                    if (onSuccess) onSuccess();
+                }).catch(function() {
+                    // 降级到方法 2
+                    fallbackCopy(text, onSuccess, onError);
+                });
+            } else {
+                // 降级到方法 2
+                fallbackCopy(text, onSuccess, onError);
+            }
+        }
+
+        /**
+         * 降级复制方案：使用 document.execCommand('copy')
+         */
+        function fallbackCopy(text, onSuccess, onError) {
+            var textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.left = '-9999px';
+            textarea.style.top = '-9999px';
+            textarea.style.opacity = '0';
+            textarea.style.pointerEvents = 'none';
+            textarea.setAttribute('readonly', '');
+            document.body.appendChild(textarea);
+
+            // iOS 需要选中范围
+            textarea.select();
+            textarea.setSelectionRange(0, text.length);
+
+            try {
+                var success = document.execCommand('copy');
+                if (success && onSuccess) {
+                    onSuccess();
+                } else if (!success && onError) {
+                    onError();
+                }
+            } catch (e) {
+                if (onError) onError();
+            }
+
+            document.body.removeChild(textarea);
+        }
+
+        /**
+         * 处理邮箱点击事件
+         * 尝试打开 mailto 协议，如果失败则复制邮箱地址
+         * @param {Event} event - 点击事件
+         * @param {string} email - 邮箱地址
+         */
+        function handleMailClick(event, email) {
+            // 阻止默认的链接行为，由我们手动处理
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+
+            var mailtoUrl = 'mailto:' + email;
+            var mailOpened = false;
+
+            // 记录点击前页面是否可见
+            var wasHiddenBefore = document.hidden || false;
+
+            // 方法 1：使用 window.location.href
+            // 这在大多数环境下都能触发系统的 mailto 处理
+            try {
+                window.location.href = mailtoUrl;
+            } catch (e) {
+                // 忽略异常，继续尝试其他方法
+            }
+
+            // 方法 2：延迟后尝试创建隐藏的 <a> 标签并点击
+            // 这对于某些 WKWebView 配置可能有效
+            setTimeout(function() {
+                if (document.hidden && !wasHiddenBefore) {
+                    // 页面已隐藏，说明邮件应用可能已经打开
+                    mailOpened = true;
+                    return;
+                }
+
+                try {
+                    var link = document.createElement('a');
+                    link.href = mailtoUrl;
+                    link.target = '_self';
+                    link.style.display = 'none';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                } catch (e) {
+                    // 忽略
+                }
+            }, 150);
+
+            // 方法 3：检测 mailto 是否成功
+            // 如果 700ms 后页面仍然可见，大概率 mailto 没有被处理
+            setTimeout(function() {
+                // 如果页面在点击后变为隐藏状态，说明邮件应用已打开
+                if (document.hidden && !wasHiddenBefore) {
+                    // mailto 成功，不做复制操作
+                    return;
+                }
+
+                // 再次检查（有些情况下隐藏状态有延迟）
+                if (document.hidden) {
+                    return;
+                }
+
+                // mailto 可能失败了，复制邮箱地址到剪贴板
+                copyToClipboard(email,
+                    function() {
+                        // 复制成功
+                        showToast('邮箱已复制：' + email, '✅');
+                    },
+                    function() {
+                        // 复制也失败了，显示邮箱让用户手动记录
+                        showToast('请手动复制邮箱：' + email, '📧');
+                    }
+                );
+            }, 700);
+        }
+
+        // 暴露到全局作用域，供 onclick 调用
+        window.handleMailClick = handleMailClick;
+
+    })();
+</script>
 
 </body>
 </html>
