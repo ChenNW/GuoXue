@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>应用截图 - 隐私政策</title>
+    <link rel="icon" href="jietulogo.png">
+    <link rel="apple-touch-icon" href="jietulogo.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+            background: linear-gradient(180deg, #f0f4ff 0%, #ffffff 40%, #f4f6fc 100%);
+            color: #2c3e50;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+        }
+        .hero { position: relative; text-align: center; padding: 80px 20px 60px; overflow: hidden; }
+        .logo { width: 130px; height: 130px; margin: auto; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 45px rgba(79,140,255,0.3); background: #fff; animation: logoPulse 3s ease-in-out infinite; }
+        @keyframes logoPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+        .logo img { width: 100%; height: 100%; display: block; object-fit: cover; }
+        .hero h1 { margin-top: 24px; font-size: 42px; font-weight: 700; background: linear-gradient(135deg, #4f8cff, #6ab7ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { margin-top: 10px; color: #5a6a7e; font-size: 17px; font-weight: 500; letter-spacing: 0.5px; }
+        .floating { position: absolute; font-size: 32px; opacity: 0.35; animation: float 5s ease-in-out infinite; pointer-events: none; user-select: none; }
+        .f1 { left: 8%; top: 50px; animation-delay: 0s; }
+        .f2 { right: 10%; top: 80px; animation-delay: 0.8s; }
+        .f3 { left: 78%; top: 200px; animation-delay: 1.6s; }
+        @keyframes float { 0%{transform:translateY(0px)} 50%{transform:translateY(-15px)} 100%{transform:translateY(0px)} }
+        .container { max-width: 900px; margin: auto; padding: 0 20px 40px; }
+        .card {
+            background: rgba(255,255,255,0.8); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+            border-radius: 28px; padding: 30px 28px; margin-bottom: 22px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06); border: 1px solid rgba(255,255,255,0.6);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 20px 45px rgba(79,140,255,0.12); }
+        .card h2 { color: #4f8cff; margin-bottom: 16px; font-size: 23px; font-weight: 650; display: flex; align-items: center; gap: 8px; }
+        .card p, .card ul { line-height: 1.9; color: #4b5563; font-size: 16px; }
+        .card ul { padding-left: 22px; margin-top: 6px; }
+        .card ul li { margin-bottom: 8px; }
+        .contact-card { text-align: center; background: rgba(255,255,255,0.9); }
+        .btn-contact {
+            display: inline-block; margin: 25px 0 10px; padding: 16px 38px; border-radius: 60px;
+            text-decoration: none; color: #fff; font-weight: 650; font-size: 17px;
+            background: linear-gradient(135deg, #4f8cff, #6ab7ff); box-shadow: 0 12px 28px rgba(79,140,255,0.35);
+            border: none; cursor: pointer; transition: all 0.25s ease; letter-spacing: 0.3px; -webkit-appearance: none;
+        }
+        .btn-contact:active { transform: scale(0.94); box-shadow: 0 8px 20px rgba(79,140,255,0.4); }
+        .email-link { color: #4f8cff; text-decoration: none; font-weight: 600; border-bottom: 2px dashed rgba(79,140,255,0.5); padding-bottom: 2px; transition: border-color 0.2s ease, opacity 0.2s ease; }
+        .email-link:active { border-bottom-color: #4f8cff; opacity: 0.7; }
+        .footer { text-align: center; padding: 30px 20px 40px; color: #8a94a6; font-size: 14px; border-top: 1px solid rgba(0,0,0,0.04); margin-top: 20px; }
+        .toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(30px); background: rgba(30,35,45,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #fff; padding: 14px 28px; border-radius: 50px; font-size: 16px; font-weight: 500; letter-spacing: 0.4px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.18,0.89,0.32,1.28); white-space: nowrap; max-width: 85vw; text-align: center; display: flex; align-items: center; gap: 8px; }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
+        .toast-icon { font-size: 18px; }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="floating f1">🔒</div>
+        <div class="floating f2">📚</div>
+        <div class="floating f3">✨</div>
+
+        <div class="logo">
+            <img src="jietulogo.png" alt="应用截图">
+        </div>
+
+        <h1>应用截图</h1>
+        <p>隐私政策 · Privacy Policy</p>
+    </div>
+
+    <div class="container">
+        <!-- 隐私总述 -->
+        <div class="card">
+            <h2>🔒 隐私承诺</h2>
+            <p>
+                我们深知隐私的重要性。本政策清楚、透明地说明应用截图如何收集、使用和保护您的信息。<strong>我们绝不会出售您的个人信息，也不会使用您的数据来跟踪您或向您投放定向广告。</strong>使用本应用即表示您同意本隐私政策。
+            </p>
+        </div>
+
+        <!-- 关于跟踪 的明确声明（新增，针对5.1.2(i)） -->
+        <div class="card">
+            <h2>🚫 关于追踪 & App Tracking Transparency</h2>
+            <p>
+                <strong>我们不追踪您。</strong> 根据苹果的定义，“追踪”是指将从应用收集的数据与第三方数据关联起来用于定向广告或广告评估目的，或者与数据经纪商共享数据。
+            </p>
+            <ul>
+                <li>我们不收集、也不使用任何设备标识符（包括 IDFA、IDFV）来进行跨应用或跨网站的广告追踪。</li>
+                <li>我们不会将您的数据与任何第三方的用户数据或广告网络的数据进行关联。</li>
+                <li>我们不会出于广告目的将您的数据共享给数据经纪商或任何广告平台。</li>
+                <li>由于本应用没有任何追踪行为，因此<strong>不会弹出 App Tracking Transparency (ATT) 权限请求</strong>——这是完全合规的。</li>
+            </ul>
+            <p style="margin-top: 12px;">
+                您在设备中看到的任何分析或崩溃报告（例如由 Apple 提供的崩溃日志）仅用于改进应用稳定性，<strong>不会用于追踪个人用户或投放广告</strong>。
+            </p>
+        </div>
+
+        <!-- 信息收集：明确说明不包含设备ID用于追踪 -->
+        <div class="card">
+            <h2>📋 我们收集哪些信息</h2>
+            <p>
+                为提供稳定的阅读服务，我们可能收集以下有限信息，<strong>所有这些都不关联到您的个人身份，也不用于追踪</strong>：
+            </p>
+            <ul>
+                <li><strong>设备基本信息：</strong>设备型号、操作系统版本（用于兼容性适配与崩溃定位）。</li>
+                <li><strong>应用运行日志：</strong>匿名化的崩溃日志与性能数据（通过 Apple 的 Xcode Organizer 或 TestFlight 收集，不含设备 ID）。</li>
+                <li><strong>用户主动反馈的内容：</strong>您发送给我们的问题描述、截图或建议。</li>
+                <li><strong>内购验证信息：</strong>当您进行购买时，Apple 会向我们提供匿名化的交易凭证，以验证订阅状态。</li>
+            </ul>
+            <p style="margin-top: 10px;">
+                ⚠️ <strong>我们明确不收集以下信息：</strong>精确位置、通讯录、照片、短信、浏览历史、设备 IDFA 或其他可用于跨应用追踪的唯一标识符。
+            </p>
+        </div>
+
+        <!-- 文件隐私 -->
+        <div class="card">
+            <h2>📁 您的文档与文件</h2>
+            <p>
+                您导入或创建的 TXT、EPUB、PDF 等文件全部存储在您的设备本地。我们无法访问、查看或收集这些文件内容，更不会将它们上传到任何远程服务器。您的阅读数据完全属于您自己。
+            </p>
+        </div>
+
+        <!-- 信息使用目的 -->
+        <div class="card">
+            <h2>🎯 我们如何使用信息</h2>
+            <p>我们收集的少量信息<strong>仅用于以下目的</strong>，绝不涉及追踪或广告：</p>
+            <ul>
+                <li>提供核心的阅读、文件管理及书签功能。</li>
+                <li>诊断应用崩溃，提升稳定性与性能。</li>
+                <li>回复您的技术支持请求。</li>
+                <li>验证您的订阅购买状态（通过 Apple 提供的安全接口）。</li>
+            </ul>
+        </div>
+
+        <!-- iCloud 与数据存储 -->
+        <div class="card">
+            <h2>☁️ 数据存储与 iCloud</h2>
+            <p>
+                默认所有文件都保留在设备本地。若您主动开启 iCloud 同步功能，文件将由 Apple 根据其隐私政策进行加密传输与存储。我们不会接触到同步过程中的任何文件内容。
+            </p>
+        </div>
+
+        <!-- 第三方服务：明确不用于追踪 -->
+        <div class="card">
+            <h2>🤝 第三方服务</h2>
+            <p>本应用仅集成 Apple 提供的系统服务来完成基本功能，<strong>这些服务均不用于追踪用户</strong>：</p>
+            <ul>
+                <li><strong>Apple App Store：</strong>应用分发与自动更新。</li>
+                <li><strong>Apple 内购 (In-App Purchase)：</strong>处理您的订阅购买，我们只收到匿名验证凭证。</li>
+                <li><strong>Apple iCloud：</strong>仅当您自主开启后用于文件同步。</li>
+                <li><strong>Apple 崩溃分析 (Crash Reports)：</strong>收集匿名的崩溃堆栈信息，帮助改进稳定性。</li>
+            </ul>
+            <p style="margin-top: 10px;">
+                我们不集成任何广告 SDK、第三方统计 SDK 或数据分析工具（如 Google Analytics、Firebase），因此您的数据不会经由任何广告或分析第三方处理。
+            </p>
+        </div>
+
+        <!-- 权限说明 -->
+        <div class="card">
+            <h2>🔐 权限说明</h2>
+            <p>我们根据功能需求申请最少的系统权限：</p>
+            <ul>
+                <li><strong>文件访问权限：</strong>用于导入、打开和管理您的文档。</li>
+                <li><strong>网络权限：</strong>用于检查应用更新、获取支持信息以及验证订阅。</li>
+                <li><strong>iCloud 权限：</strong>仅在您主动开启同步时请求，用于跨设备同步文件。</li>
+            </ul>
+            <p>我们不会请求访问通讯录、照片、相机、麦克风、位置等与阅读无关的权限。</p>
+        </div>
+
+        <!-- 未成年人保护 -->
+        <div class="card">
+            <h2>👶 未成年人保护</h2>
+            <p>
+                如您是未成年人，请在监护人指导下使用本应用。我们不会故意收集任何未成年人的个人信息。若发现此类情况，请联系我们，我们将立即删除相关数据。
+            </p>
+        </div>
+
+        <!-- 政策更新 -->
+        <div class="card">
+            <h2>📝 政策更新</h2>
+            <p>
+                我们可能适时更新本政策。更新后，新版本将在应用内或本页面发布。如涉及重大变更，我们会通过应用内通知或您提供的联系方式告知。
+            </p>
+        </div>
+
+        <!-- 联系我们 -->
+        <div class="card contact-card">
+            <h2>📧 联系我们</h2>
+            <p>如对隐私政策有任何疑问，或需要行使您的数据权利，欢迎联系我们：</p>
+            <button class="btn-contact" onclick="handleMailClick(event, 'guoxuetansuo@163.com')" type="button">
+                ✉️ 联系技术支持
+            </button>
+            <p style="margin-top: 20px; color:#5a6a7e;">
+                邮箱：<a class="email-link" href="mailto:guoxuetansuo@163.com" onclick="handleMailClick(event, 'guoxuetansuo@163.com')">guoxuetansuo@163.com</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 应用截图 · All Rights Reserved<br>最后更新：2026年6月
+    </div>
+
+    <div class="toast" id="toast">
+        <span class="toast-icon">📋</span><span id="toastMsg">已复制</span>
+    </div>
+
+    <script>
+        (function() {
+            const toastEl = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            let timer = null;
+
+            function showToast(text, icon = '📋') {
+                toastEl.querySelector('.toast-icon').textContent = icon;
+                toastMsg.textContent = text;
+                if (timer) clearTimeout(timer);
+                toastEl.classList.remove('show');
+                void toastEl.offsetWidth;
+                toastEl.classList.add('show');
+                timer = setTimeout(() => toastEl.classList.remove('show'), 2500);
+            }
+
+            function copyText(text, onSuccess, onFail) {
+                if (navigator.clipboard?.writeText) {
+                    navigator.clipboard.writeText(text).then(onSuccess).catch(() => fallbackCopy(text, onSuccess, onFail));
+                } else {
+                    fallbackCopy(text, onSuccess, onFail);
+                }
+            }
+
+            function fallbackCopy(text, onSuccess, onFail) {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed';
+                ta.style.left = '-9999px';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                ta.setSelectionRange(0, text.length);
+                try {
+                    document.execCommand('copy') ? onSuccess() : onFail();
+                } catch (e) {
+                    onFail();
+                }
+                document.body.removeChild(ta);
+            }
+
+            window.handleMailClick = function(event, email) {
+                if (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                const mailto = 'mailto:' + email;
+                const wasHidden = document.hidden;
+                try { window.location.href = mailto; } catch (e) {}
+                setTimeout(() => {
+                    if (!document.hidden || wasHidden) {
+                        const a = document.createElement('a');
+                        a.href = mailto;
+                        a.target = '_self';
+                        a.style.display = 'none';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    }
+                }, 150);
+                setTimeout(() => {
+                    if (!document.hidden || wasHidden) {
+                        copyText(email,
+                            () => showToast('邮箱已复制：' + email, '✅'),
+                            () => showToast('请手动复制邮箱：' + email, '📧')
+                        );
+                    }
+                }, 700);
+            };
+        })();
+    </script>
+</body>
+</html>
