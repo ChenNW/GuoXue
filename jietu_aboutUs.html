@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>应用截图 - 隐私政策</title>
+    <title>应用截图 - 关于我们</title>
     <link rel="icon" href="jietulogo.png">
     <link rel="apple-touch-icon" href="jietulogo.png">
     <style>
@@ -52,14 +52,22 @@
         .toast { position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(30px); background: rgba(30,35,45,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #fff; padding: 14px 28px; border-radius: 50px; font-size: 16px; font-weight: 500; letter-spacing: 0.4px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.18,0.89,0.32,1.28); white-space: nowrap; max-width: 85vw; text-align: center; display: flex; align-items: center; gap: 8px; }
         .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); pointer-events: auto; }
         .toast-icon { font-size: 18px; }
+        .badge-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; justify-content: center; }
+        .badge { background: #eef3ff; color: #4f8cff; padding: 6px 18px; border-radius: 30px; font-size: 14px; font-weight: 500; }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+        .feature-item { background: rgba(79,140,255,0.06); border-radius: 16px; padding: 16px; text-align: center; }
+        .feature-item .icon { font-size: 28px; display: block; margin-bottom: 6px; }
+        .feature-item .label { font-weight: 600; color: #2c3e50; font-size: 15px; }
+        .feature-item .desc { font-size: 13px; color: #6b7a8e; margin-top: 4px; }
+        @media (max-width: 600px) { .feature-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 
 <body>
 
     <div class="hero">
-        <div class="floating f1">🔒</div>
-        <div class="floating f2">📚</div>
+        <div class="floating f1">🚀</div>
+        <div class="floating f2">📱</div>
         <div class="floating f3">✨</div>
 
         <div class="logo">
@@ -67,134 +75,88 @@
         </div>
 
         <h1>应用截图</h1>
-        <p>隐私政策 · Privacy Policy</p>
+        <p>关于我们 · About Us</p>
     </div>
 
     <div class="container">
-        <!-- 隐私总述 -->
+
+        <!-- 我们的故事 -->
         <div class="card">
-            <h2>🔒 隐私承诺</h2>
+            <h2>📖 我们的故事</h2>
             <p>
-                我们深知隐私的重要性。本政策清楚、透明地说明应用截图如何收集、使用和保护您的信息。<strong>我们绝不会出售您的个人信息，也不会使用您的数据来跟踪您或向您投放定向广告。</strong>使用本应用即表示您同意本隐私政策。
+                「应用截图」诞生于一个简单却真实的痛点：作为 iOS 开发者，每次为 App Store 准备不同尺寸的截图时，都需要重复手动调整、适配多个设备，耗时又容易出错。
+            </p>
+            <p style="margin-top:10px;">
+                我们决定打造一款工具，让这一切变得简单、快速且优雅。于是「应用截图」应运而生——它让您只需导入一张设计稿，就能自动生成所有需要的设备截图，并支持一键导出。无论是个人开发者还是设计团队，都能节省大量时间，专注于更重要的创意工作。
             </p>
         </div>
 
-        <!-- 关于跟踪 的明确声明（新增，针对5.1.2(i)） -->
+        <!-- 功能亮点（网格展示） -->
         <div class="card">
-            <h2>🚫 关于追踪 & App Tracking Transparency</h2>
-            <p>
-                <strong>我们不追踪您。</strong> 根据苹果的定义，“追踪”是指将从应用收集的数据与第三方数据关联起来用于定向广告或广告评估目的，或者与数据经纪商共享数据。
-            </p>
+            <h2>🌟 核心功能</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <span class="icon">📱</span>
+                    <div class="label">多设备模板</div>
+                    <div class="desc">iPhone / iPad / Apple Watch / Mac 全覆盖</div>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🎨</span>
+                    <div class="label">智能适配</div>
+                    <div class="desc">自动匹配各设备分辨率与圆角</div>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">⚡️</span>
+                    <div class="label">批量导出</div>
+                    <div class="desc">一键生成所有尺寸，高效省时</div>
+                </div>
+                <div class="feature-item">
+                    <span class="icon">🔒</span>
+                    <div class="label">完全本地处理</div>
+                    <div class="desc">不上传任何图片，隐私绝对安全</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 为什么选择我们 -->
+        <div class="card">
+            <h2>💡 为什么选择我们</h2>
             <ul>
-                <li>我们不收集、也不使用任何设备标识符（包括 IDFA、IDFV）来进行跨应用或跨网站的广告追踪。</li>
-                <li>我们不会将您的数据与任何第三方的用户数据或广告网络的数据进行关联。</li>
-                <li>我们不会出于广告目的将您的数据共享给数据经纪商或任何广告平台。</li>
-                <li>由于本应用没有任何追踪行为，因此<strong>不会弹出 App Tracking Transparency (ATT) 权限请求</strong>——这是完全合规的。</li>
-            </ul>
-            <p style="margin-top: 12px;">
-                您在设备中看到的任何分析或崩溃报告（例如由 Apple 提供的崩溃日志）仅用于改进应用稳定性，<strong>不会用于追踪个人用户或投放广告</strong>。
-            </p>
-        </div>
-
-        <!-- 信息收集：明确说明不包含设备ID用于追踪 -->
-        <div class="card">
-            <h2>📋 我们收集哪些信息</h2>
-            <p>
-                为提供稳定的阅读服务，我们可能收集以下有限信息，<strong>所有这些都不关联到您的个人身份，也不用于追踪</strong>：
-            </p>
-            <ul>
-                <li><strong>设备基本信息：</strong>设备型号、操作系统版本（用于兼容性适配与崩溃定位）。</li>
-                <li><strong>应用运行日志：</strong>匿名化的崩溃日志与性能数据（通过 Apple 的 Xcode Organizer 或 TestFlight 收集，不含设备 ID）。</li>
-                <li><strong>用户主动反馈的内容：</strong>您发送给我们的问题描述、截图或建议。</li>
-                <li><strong>内购验证信息：</strong>当您进行购买时，Apple 会向我们提供匿名化的交易凭证，以验证订阅状态。</li>
-            </ul>
-            <p style="margin-top: 10px;">
-                ⚠️ <strong>我们明确不收集以下信息：</strong>精确位置、通讯录、照片、短信、浏览历史、设备 IDFA 或其他可用于跨应用追踪的唯一标识符。
-            </p>
-        </div>
-
-        <!-- 文件隐私 -->
-        <div class="card">
-            <h2>📁 您的文档与文件</h2>
-            <p>
-                您导入或创建的 TXT、EPUB、PDF 等文件全部存储在您的设备本地。我们无法访问、查看或收集这些文件内容，更不会将它们上传到任何远程服务器。您的阅读数据完全属于您自己。
-            </p>
-        </div>
-
-        <!-- 信息使用目的 -->
-        <div class="card">
-            <h2>🎯 我们如何使用信息</h2>
-            <p>我们收集的少量信息<strong>仅用于以下目的</strong>，绝不涉及追踪或广告：</p>
-            <ul>
-                <li>提供核心的阅读、文件管理及书签功能。</li>
-                <li>诊断应用崩溃，提升稳定性与性能。</li>
-                <li>回复您的技术支持请求。</li>
-                <li>验证您的订阅购买状态（通过 Apple 提供的安全接口）。</li>
+                <li><strong>专注极致：</strong>我们只做截图生成这一件事，并把它做到最好。</li>
+                <li><strong>隐私优先：</strong>所有处理均在设备本地完成，您的设计稿永远不会离开您的手机。</li>
+                <li><strong>设计友好：</strong>界面简洁清晰，无需学习成本，打开即用。</li>
+                <li><strong>持续更新：</strong>我们会紧跟 Apple 设备更新，及时补充最新机型模板。</li>
             </ul>
         </div>
 
-        <!-- iCloud 与数据存储 -->
+        <!-- 开发者信息 -->
         <div class="card">
-            <h2>☁️ 数据存储与 iCloud</h2>
+            <h2>🧑‍💻 关于开发者</h2>
             <p>
-                默认所有文件都保留在设备本地。若您主动开启 iCloud 同步功能，文件将由 Apple 根据其隐私政策进行加密传输与存储。我们不会接触到同步过程中的任何文件内容。
+                我们是一支热爱技术、尊重设计的独立开发者团队，致力于为移动开发者提供高效、可靠的生产力工具。我们相信，好的工具应该隐于无形，让用户感受不到它的存在，只感受到创作的自由。
             </p>
-        </div>
-
-        <!-- 第三方服务：明确不用于追踪 -->
-        <div class="card">
-            <h2>🤝 第三方服务</h2>
-            <p>本应用仅集成 Apple 提供的系统服务来完成基本功能，<strong>这些服务均不用于追踪用户</strong>：</p>
-            <ul>
-                <li><strong>Apple App Store：</strong>应用分发与自动更新。</li>
-                <li><strong>Apple 内购 (In-App Purchase)：</strong>处理您的订阅购买，我们只收到匿名验证凭证。</li>
-                <li><strong>Apple iCloud：</strong>仅当您自主开启后用于文件同步。</li>
-                <li><strong>Apple 崩溃分析 (Crash Reports)：</strong>收集匿名的崩溃堆栈信息，帮助改进稳定性。</li>
-            </ul>
-            <p style="margin-top: 10px;">
-                我们不集成任何广告 SDK、第三方统计 SDK 或数据分析工具（如 Google Analytics、Firebase），因此您的数据不会经由任何广告或分析第三方处理。
+            <p style="margin-top:10px;">
+                如果您喜欢「应用截图」，欢迎留下五星好评；如果您有任何建议或遇到了问题，请随时联系我们，我们会认真倾听每一条反馈。
             </p>
+            <div class="badge-row">
+                <span class="badge">❤️ 用心打造</span>
+                <span class="badge">🛡️ 隐私至上</span>
+                <span class="badge">🚀 持续迭代</span>
+            </div>
         </div>
 
-        <!-- 权限说明 -->
-        <div class="card">
-            <h2>🔐 权限说明</h2>
-            <p>我们根据功能需求申请最少的系统权限：</p>
-            <ul>
-                <li><strong>文件访问权限：</strong>用于导入、打开和管理您的文档。</li>
-                <li><strong>网络权限：</strong>用于检查应用更新、获取支持信息以及验证订阅。</li>
-                <li><strong>iCloud 权限：</strong>仅在您主动开启同步时请求，用于跨设备同步文件。</li>
-            </ul>
-            <p>我们不会请求访问通讯录、照片、相机、麦克风、位置等与阅读无关的权限。</p>
-        </div>
-
-        <!-- 未成年人保护 -->
-        <div class="card">
-            <h2>👶 未成年人保护</h2>
-            <p>
-                如您是未成年人，请在监护人指导下使用本应用。我们不会故意收集任何未成年人的个人信息。若发现此类情况，请联系我们，我们将立即删除相关数据。
-            </p>
-        </div>
-
-        <!-- 政策更新 -->
-        <div class="card">
-            <h2>📝 政策更新</h2>
-            <p>
-                我们可能适时更新本政策。更新后，新版本将在应用内或本页面发布。如涉及重大变更，我们会通过应用内通知或您提供的联系方式告知。
-            </p>
-        </div>
-
-        <!-- 联系我们 -->
+        <!-- 联系方式（与前面保持一致） -->
         <div class="card contact-card">
             <h2>📧 联系我们</h2>
-            <p>如对隐私政策有任何疑问，或需要行使您的数据权利，欢迎联系我们：</p>
+            <p>如果您有任何想法、问题或合作意向，欢迎通过以下方式与我们取得联系：</p>
             <button class="btn-contact" onclick="handleMailClick(event, 'guoxuetansuo@163.com')" type="button">
-                ✉️ 联系技术支持
+                ✉️ 发送邮件
             </button>
             <p style="margin-top: 20px; color:#5a6a7e;">
                 邮箱：<a class="email-link" href="mailto:guoxuetansuo@163.com" onclick="handleMailClick(event, 'guoxuetansuo@163.com')">guoxuetansuo@163.com</a>
             </p>
         </div>
+
     </div>
 
     <div class="footer">
@@ -276,5 +238,6 @@
             };
         })();
     </script>
+
 </body>
 </html>
