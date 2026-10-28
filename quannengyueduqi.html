@@ -1,675 +1,126 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title>
-iPhone CHM阅读器 - EPUB/TXT/MOBI电子书阅读工具 | 全能阅读器
-</title>
-
-
-<meta name="description"
-content="
-全能阅读器是一款专业iPhone电子书阅读工具，
-支持CHM、EPUB、TXT、MOBI、PDF等格式，
-支持本地离线阅读、文件加密、ZIP解压、自定义字体和听书功能。
-">
-
-
-<meta name="keywords"
-content="
-CHM阅读器,
-iPhone CHM,
-EPUB阅读器,
-MOBI阅读器,
-TXT阅读器,
-电子书阅读器,
-PDF阅读器
-">
-
-
+<title>iPhone CHM阅读器 - EPUB/TXT/MOBI电子书阅读工具 | 全能阅读器</title>
+<meta name="description" content="全能阅读器是一款专业iPhone电子书阅读工具，支持CHM、EPUB、TXT、MOBI、PDF等格式，支持本地离线阅读、文件加密、ZIP解压、自定义字体和听书功能。">
+<meta name="keywords" content="CHM阅读器,iPhone CHM,EPUB阅读器,MOBI阅读器,TXT阅读器,电子书阅读器,PDF阅读器">
+<meta name="robots" content="index,follow">
+<!-- 百度搜索资源平台验证标签，把 YOUR_VERIFY_CODE 换成平台给的 content -->
+<meta name="baidu-site-verification" content="YOUR_VERIFY_CODE" />
 <style>
-
-
-*{
-box-sizing:border-box;
-}
-
-
-body{
-
-margin:0;
-
-font-family:
--apple-system,
-BlinkMacSystemFont,
-"Helvetica Neue",
-Arial;
-
-background:#090909;
-
-color:#fff;
-
-}
-
-
-
-.container{
-
-max-width:1100px;
-
-margin:auto;
-
-padding:20px;
-
-}
-
-
-
-.hero{
-
-text-align:center;
-
-padding:70px 20px;
-
-}
-
-
-
-.logo{
-
-width:130px;
-
-height:130px;
-
-border-radius:28px;
-
-}
-
-
-
-h1{
-
-font-size:42px;
-
-margin:25px 0 15px;
-
-}
-
-
-
-.subtitle{
-
-font-size:20px;
-
-line-height:1.8;
-
-color:#ccc;
-
-}
-
-
-
-.btn{
-
-display:inline-block;
-
-margin:30px 10px;
-
-padding:15px 45px;
-
-border-radius:30px;
-
-background:linear-gradient(135deg,#d8b25c,#f8e2a0);
-
-color:#111;
-
-font-weight:bold;
-
-text-decoration:none;
-
-}
-
-
-
-.section{
-
-margin-top:70px;
-
-}
-
-
-
-.title{
-
-text-align:center;
-
-font-size:32px;
-
-margin-bottom:40px;
-
-}
-
-
-
-.grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(250px,1fr));
-
-gap:20px;
-
-}
-
-
-
-.card{
-
-background:#151515;
-
-border-radius:20px;
-
-padding:30px;
-
-border:1px solid #292929;
-
-}
-
-
-
-.card h3{
-
-color:#e5c36a;
-
-}
-
-
-
-.card p{
-
-color:#ccc;
-
-line-height:1.8;
-
-}
-
-
-
-.highlight{
-
-background:#111;
-
-border-radius:20px;
-
-padding:40px;
-
-line-height:2;
-
-}
-
-
-
-.highlight span{
-
-color:#e5c36a;
-
-}
-
-
-
-.qrcode{
-
-width:200px;
-
-height:200px;
-
-background:white;
-
-padding:10px;
-
-border-radius:15px;
-
-}
-
-
-
-.download{
-
-text-align:center;
-
-}
-
-
-
-.faq h3{
-
-color:#e5c36a;
-
-}
-
-
-
-.footer{
-
-text-align:center;
-
-color:#777;
-
-padding:50px 0;
-
-}
-
-
-
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial; background: #090909; color: #fff; }
+.container { max-width: 1100px; margin: auto; padding: 20px; }
+.hero { text-align: center; padding: 70px 20px; }
+.logo { width: 130px; height: 130px; border-radius: 28px; }
+h1 { font-size: 42px; margin: 25px 0 15px; }
+.subtitle { font-size: 20px; line-height: 1.8; color: #ccc; }
+.btn { display: inline-block; margin: 30px 10px; padding: 15px 45px; border-radius: 30px; background: linear-gradient(135deg, #d8b25c, #f8e2a0); color: #111; font-weight: bold; text-decoration: none; }
+.section { margin-top: 70px; }
+.title { text-align: center; font-size: 32px; margin-bottom: 40px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.card { background: #151515; border-radius: 20px; padding: 30px; border: 1px solid #292929; }
+.card h3 { color: #e5c36a; }
+.card p { color: #ccc; line-height: 1.8; }
+.highlight { background: #111; border-radius: 20px; padding: 40px; line-height: 2; }
+.highlight span { color: #e5c36a; }
+.qrcode { width: 200px; height: 200px; background: white; padding: 10px; border-radius: 15px; }
+.download { text-align: center; }
+.faq h3 { color: #e5c36a; }
+.footer { text-align: center; color: #777; padding: 50px 0; }
 </style>
-
-
 </head>
-
-
-
 <body>
-
-
-
 <div class="container">
 
+  <section class="hero">
+    <img class="logo" src="quanneng_logo.png" alt="全能阅读器 App 图标">
+    <h1>全能阅读器</h1>
+    <p class="subtitle">你的私人数字书房<br>专业 iPhone 本地电子书阅读工具<br>支持 CHM / EPUB / TXT / MOBI / PDF</p>
+    <a class="btn" href="https://apps.apple.com/app/id6745007192">🍎 App Store 下载</a>
+  </section>
 
+  <section class="section">
+    <h2 class="title">支持多种电子书格式</h2>
+    <div class="grid">
+      <div class="card"><h3>📘 CHM</h3><p>专业支持CHM技术文档，保留目录结构、章节导航、超链接和全文搜索。</p></div>
+      <div class="card"><h3>📕 EPUB</h3><p>智能章节解析，支持夜间模式、字体调整和沉浸阅读。</p></div>
+      <div class="card"><h3>📗 TXT</h3><p>自动识别小说章节，打造舒适阅读体验。</p></div>
+      <div class="card"><h3>📙 MOBI/AZW3</h3><p>支持常见电子书格式，方便管理个人书库。</p></div>
+      <div class="card"><h3>📄 PDF</h3><p>快速查看学习资料、技术文档和电子资料。</p></div>
+      <div class="card"><h3>📦 ZIP</h3><p>无需其它工具，直接解压查看压缩包内的文件。</p></div>
+    </div>
+  </section>
 
-<!-- 首页 -->
+  <section class="section">
+    <h2 class="title">iPhone专业CHM阅读器</h2>
+    <div class="highlight">
+      很多技术资料、开发文档仍然使用 <span>CHM格式</span>。<br>
+      但是 iPhone 默认无法直接打开 CHM 文件。<br><br>
+      全能阅读器支持：<br>
+      ✓ CHM目录解析<br>
+      ✓ 章节快速跳转<br>
+      ✓ 超链接浏览<br>
+      ✓ 全文搜索<br>
+      ✓ 离线阅读
+    </div>
+  </section>
 
+  <section class="section">
+    <h2 class="title">不仅是阅读器</h2>
+    <div class="grid">
+      <div class="card"><h3>🔒 文件加密</h3><p>保护私人电子书和重要资料，文件只保存在你的设备。</p></div>
+      <div class="card"><h3>🎨 自定义字体</h3><p>导入喜欢的字体，打造个性化阅读体验。</p></div>
+      <div class="card"><h3>🎧 听书模式</h3><p>文字转换声音，阅读更加轻松。</p></div>
+      <div class="card"><h3>📚 文件管理</h3><p>统一管理手机中的电子书、文档和资料。</p></div>
+    </div>
+  </section>
 
-<section class="hero">
+  <section class="section faq">
+    <h2 class="title">常见问题</h2>
+    <h3>Q：iPhone如何打开CHM文件？</h3>
+    <p>下载全能阅读器后，导入CHM文件即可自动解析目录并阅读。</p>
+    <h3>Q：文件会上传服务器吗？</h3>
+    <p>不会。全能阅读器采用本地处理，保护你的文件隐私。</p>
+    <h3>Q：支持哪些格式？</h3>
+    <p>支持 CHM、EPUB、TXT、MOBI、AZW3、PDF 等格式。</p>
+  </section>
 
+  <section class="section download">
+    <h2 class="title">下载全能阅读器</h2>
+    <p>扫描二维码安装</p>
+    <img class="qrcode" src="quannengDownload.png" alt="全能阅读器 App Store 下载二维码">
+    <br>
+    <a class="btn" href="https://apps.apple.com/app/id6745007192">立即下载</a>
+  </section>
 
-<img class="logo"
-src="quanneng_logo.png">
-
-
-<h1>
-全能阅读器
-</h1>
-
-
-<p class="subtitle">
-
-你的私人数字书房<br>
-
-专业 iPhone 本地电子书阅读工具<br>
-
-支持 CHM / EPUB / TXT / MOBI / PDF
-
-</p>
-
-
-<a class="btn"
-href="https://apps.apple.com/app/id6745007192">
-
-🍎 App Store 下载
-
-</a>
-
-
-</section>
-
-
-
-
-
-<!-- 格式 -->
-
-
-<section class="section">
-
-
-<h2 class="title">
-支持多种电子书格式
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>📘 CHM</h3>
-
-<p>
-专业支持CHM技术文档，
-保留目录结构、章节导航、
-超链接和全文搜索。
-</p>
-
+  <div class="footer">全能阅读器<br>专业 iOS 本地电子书阅读工具<br><br>© 2026</div>
 </div>
 
-
-<div class="card">
-
-<h3>📕 EPUB</h3>
-
-<p>
-智能章节解析，
-支持夜间模式、
-字体调整和沉浸阅读。
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>📗 TXT</h3>
-
-<p>
-自动识别小说章节，
-打造舒适阅读体验。
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>📙 MOBI/AZW3</h3>
-
-<p>
-支持常见电子书格式，
-方便管理个人书库。
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>📄 PDF</h3>
-
-<p>
-快速查看学习资料、
-技术文档和电子资料。
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>📦 ZIP/RAR/7Z</h3>
-
-<p>
-无需其它工具，
-直接解压查看文件。
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-
-
-<!-- CHM SEO -->
-
-
-<section class="section">
-
-
-<h2 class="title">
-
-iPhone专业CHM阅读器
-
-</h2>
-
-
-<div class="highlight">
-
-
-很多技术资料、开发文档仍然使用
-<span>CHM格式</span>。
-
-
-<br>
-
-
-但是 iPhone 默认无法直接打开 CHM 文件。
-
-
-<br><br>
-
-
-全能阅读器支持：
-
-<br>
-
-✓ CHM目录解析
-
-<br>
-
-✓ 章节快速跳转
-
-<br>
-
-✓ 超链接浏览
-
-<br>
-
-✓ 全文搜索
-
-<br>
-
-✓ 离线阅读
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- 工具能力 -->
-
-
-<section class="section">
-
-
-<h2 class="title">
-不仅是阅读器
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>🔒 文件加密</h3>
-
-<p>
-保护私人电子书和重要资料，
-文件只保存在你的设备。
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🎨 自定义字体</h3>
-
-<p>
-导入喜欢的字体，
-打造个性化阅读体验。
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>🎧 听书模式</h3>
-
-<p>
-文字转换声音，
-阅读更加轻松。
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>📚 文件管理</h3>
-
-<p>
-统一管理手机中的电子书、
-文档和资料。
-</p>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<!-- FAQ -->
-
-
-<section class="section faq">
-
-
-<h2 class="title">
-常见问题
-</h2>
-
-
-<h3>
-Q：iPhone如何打开CHM文件？
-</h3>
-
-<p>
-
-下载全能阅读器后，
-导入CHM文件即可自动解析目录并阅读。
-
-</p>
-
-
-
-<h3>
-Q：文件会上传服务器吗？
-</h3>
-
-<p>
-
-不会。
-全能阅读器采用本地处理，
-保护你的文件隐私。
-
-</p>
-
-
-
-<h3>
-Q：支持哪些格式？
-</h3>
-
-<p>
-
-支持 CHM、EPUB、TXT、MOBI、
-AZW3、PDF、CBZ 等格式。
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-<!-- 下载 -->
-
-
-<section class="section download">
-
-
-<h2 class="title">
-
-下载全能阅读器
-
-</h2>
-
-
-<p>
-扫描二维码安装
-</p>
-
-
-<img class="qrcode"
-src="quannengDownload.png">
-
-
-<br>
-
-
-<a class="btn"
-href="https://apps.apple.com/app/id6745007192">
-
-立即下载
-
-</a>
-
-
-</section>
-
-
-
-<div class="footer">
-
-
-全能阅读器<br>
-
-专业 iOS 本地电子书阅读工具
-
-<br><br>
-
-© 2026
-
-
-</div>
-
-
-
-</div>
-
-
-
+<!-- 百度结构化数据，有助于出富摘要 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "全能阅读器",
+  "operatingSystem": "iOS",
+  "applicationCategory": "UtilitiesApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CNY" },
+  "downloadUrl": "https://apps.apple.com/app/id6745007192"
+}
+</script>
+
+<!-- 百度主动推送：访客打开页面时自动通知百度来抓取 -->
+<script>
+(function () {
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(bp, s);
+})();
+</script>
 </body>
-
 </html>
